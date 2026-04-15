@@ -84,13 +84,13 @@ WSGI_APPLICATION = "advancedTodo.wsgi.application"
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default=os.environ.get('PGDATABASE')),
-        'USER': config('DB_USER', default=os.environ.get('PGUSER')),
-        'PASSWORD': config('DB_PASSWORD', default=os.environ.get('PGPASSWORD')),
-        'HOST': config('DB_HOST', default=os.environ.get('PGHOST', 'localhost')),
-        'PORT': config('DB_PORT', default=os.environ.get('PGPORT', '5432')),
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": config("PGDATABASE"),
+        "USER": config("PGUSER"),
+        "PASSWORD": config("PGPASSWORD"),
+        "HOST": config("PGHOST"),
+        "PORT": config("PGPORT", default="5432"),
     }
 }
 
