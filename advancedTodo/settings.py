@@ -129,14 +129,12 @@ USE_I18N = True
 USE_TZ = True
 
 
-CSRF_TRUSTED_ORIGINS = [
-    "https://django-todo-app-production-8a48.up.railway.app/p"
-]
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
-
+CSRF_TRUSTED_ORIGINS = [
+    "https://django-todo-app-production-8a48.up.railway.app/"
+]
 LOGIN_URL = "/login"
-STATIC_URL = "/static/"
-STATIC_ROOT = BASE_DIR / "staticfiles"
+STATIC_URL = "static/"
+STATICFILES_DIRS = [BASE_DIR / "static"]
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
