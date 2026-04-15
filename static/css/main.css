@@ -1,0 +1,287 @@
+:root {
+    --bg-color: #F4F4F8;
+    --surface: #ffffff;
+    --surface2: #eeeef4;
+    --text-color: #1B1B1F;
+    --text2: #666666;
+    --primary-color: #009C9C;
+    --primary-hover: #007a7a;
+    --border: rgba(0,0,0,0.1);
+    --success-color: #1a7a3a;
+    --danger-color: #c0392b;
+    --radius: 10px;
+}
+body.dark-mode {
+    --bg-color: #0d0d1a;
+    --surface: #141428;
+    --surface2: #1c1c35;
+    --text-color: #e0e0e0;
+    --text2: #8888aa;
+    --border: rgba(255,255,255,0.08);
+    --success-color: #4caf7d;
+    --danger-color: #e57373;
+}
+/* Dark mode overrides */
+body.dark-mode .navbar {
+    background-color: #121229; /* dark navbar */
+}
+
+/* Dark mode */
+body.dark-mode .navbar .navbar-brand {
+    color: #e0e0e0; /* light text for dark mode */
+}
+
+body.dark-mode .navbar .navbar-brand:hover {
+    color: var(--primary-color); /* same neon accent hover */
+    text-shadow: 0 0 4px var(--primary-color);
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+}
+
+a:hover {
+    color: var(--secondary-color);
+    text-decoration: none;
+}
+
+/* Navbar background */
+.navbar {
+    background-color: var(--surface);
+    border-bottom: 0.5px solid var(--border);
+    transition: background-color 0.3s ease;
+}
+/* Navbar links */
+.navbar .nav-link {
+    color: var(--text-color);
+    transition: color 0.3s, box-shadow 0.3s, text-shadow 0.3s;
+}
+
+.navbar .nav-link:hover {
+    color: var(--secondary-color);
+    box-shadow: 0 0 8px var(--secondary-color);
+    text-shadow: 0 0 4px var(--secondary-color);
+}
+
+/* Navbar brand */
+.navbar .navbar-brand {
+    color: var(--text-color);
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.navbar .navbar-brand:hover {
+    color: var(--secondary-color);
+    text-shadow: 0 0 4px var(--secondary-color);
+}
+
+
+/* Footer */
+footer a {
+    font-size: 1.2rem;
+    transition: color 0.3s;
+    color: var(--text-color);
+}
+
+footer a:hover {
+    color: var(--secondary-color);
+}
+/* Nav links */
+.navbar .nav-link { color: var(--text2); border-radius: 6px; transition: all .2s; }
+.navbar .nav-link:hover { color: var(--primary-color); background: rgba(0,156,156,.08); }
+.navbar .nav-link.text-success { color: var(--success-color) !important; font-weight: 600; }
+.navbar .nav-link.text-danger  { color: var(--danger-color)  !important; }
+.navbar .nav-link.text-primary { color: var(--primary-color) !important; }
+
+/* Cards */
+.card {
+    background: var(--surface);
+    border: 0.5px solid var(--border) !important;
+    border-radius: var(--radius);
+}
+
+/* Task items */
+.task-item {
+    background: var(--surface);
+    border: 0.5px solid var(--border);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color .2s;
+}
+.task-item:hover { border-color: rgba(0,156,156,.3); }
+
+/* Buttons */
+.btn-primary { background-color: var(--primary-color) !important; border-color: var(--primary-color) !important; }
+.btn-primary:hover { background-color: var(--primary-hover) !important; border-color: var(--primary-hover) !important; }
+
+/* Forms */
+.form-control {
+    background: var(--surface2);
+    border: 0.5px solid var(--border);
+    color: var(--text-color);
+    border-radius: 8px;
+}
+.form-control:focus {
+    background: var(--surface);
+    border-color: var(--primary-color);
+    box-shadow: none;
+    color: var(--text-color);
+}
+
+/* Footer */
+footer { border-top: 0.5px solid var(--border); }
+footer a { font-size: 1.2rem; color: var(--text2); transition: color 0.3s; }
+footer a:hover { color: var(--primary-color); }
+
+body.dark-mode {
+    color: var(--text-color);
+}
+body.dark-mode .text-muted {
+    color: var(--text2) !important;
+}
+body.dark-mode .form-control {
+    background: var(--surface2);
+    color: var(--text-color);
+    border-color: var(--border);
+}
+body.dark-mode .form-control::placeholder {
+    color: var(--text2);
+}
+body.dark-mode .card {
+    background: var(--surface);
+    color: var(--text-color);
+}
+body.dark-mode .input-group-text {
+    background: var(--surface2);
+    border-color: var(--border);
+    color: var(--text2);
+}
+.input-group-text {
+    background: var(--surface2);
+    border-color: var(--border);
+    color: var(--text2);
+}
+.input-group .form-control {
+    border-color: var(--border);
+}
+.pill {
+    display: inline-block;
+    font-size: 10px;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-weight: 500;
+    margin-left: 6px;
+}
+.pill-todo { background: rgba(0,156,156,.12); color: var(--primary-color); }
+.pill-done { background: rgba(26,122,58,.12); color: var(--success-color); }
+
+.task-check {
+    width: 18px;
+    height: 18px;
+    border-radius: 5px;
+    border: 1.5px solid var(--border);
+    flex-shrink: 0;
+    display: inline-block;
+}
+
+.task-meta {
+    font-size: 11px;
+    color: var(--text2);
+    margin-top: 2px;
+}
+.django-form p {
+    margin-bottom: 16px;
+}
+.django-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--text2);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 6px;
+}
+.django-form input,
+.django-form textarea,
+.django-form select {
+    width: 100%;
+    padding: 9px 12px;
+    border: 0.5px solid var(--border);
+    border-radius: 8px;
+    background: var(--surface2);
+    color: var(--text-color);
+    font-size: 14px;
+    outline: none;
+    transition: border-color .2s;
+    font-family: inherit;
+}
+.django-form input:focus,
+.django-form textarea:focus {
+    border-color: var(--primary-color);
+    background: var(--surface);
+}
+.django-form textarea {
+    min-height: 80px;
+    max-height: 140px;
+    resize: vertical;
+}
+body.dark-mode .django-form input,
+body.dark-mode .django-form textarea {
+    background: var(--surface2);
+    color: var(--text-color);
+    border-color: var(--border);
+}
+.django-form input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+    cursor: pointer;
+    border-radius: 4px;
+}
+.django-form p:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.django-form p:has(input[type="checkbox"]) label {
+    text-transform: none;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0;
+    margin-bottom: 0;
+    color: var(--text-color);
+}
+.task-item.completed .task-title {
+    text-decoration: line-through;
+    color: var(--text2);
+}
+.task-item.completed .task-check {
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+    position: relative;
+}
+.task-item.completed .task-check::after {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 7px;
+    border: 2px solid white;
+    border-top: none;
+    border-left: none;
+    transform: rotate(45deg) translate(3px, 1px);
+}
+.task-check {
+    cursor: pointer;
+    transition: all .2s;
+}
+.task-check:hover {
+    border-color: var(--primary-color);
+}

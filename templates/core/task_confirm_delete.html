@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="page">
+<a href="{% url 'taskList' %}" class="text-muted small">← Back to tasks</a>
+<div class="card p-4 mt-3" style="max-width:480px; margin:0 auto;">
+    <h5 class="fw-500 mb-3">Delete Task</h5>
+    <p class="text-muted mb-4">Are you sure you want to delete <strong>"{{task}}"</strong>?</p>
+    <form method="POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger w-100">Yes, delete</button>
+    </form>
+</div>
+</div>
+
+{% endblock %}
