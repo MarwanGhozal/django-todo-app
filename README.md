@@ -25,17 +25,16 @@ A backend-driven Todo application built using Django with secure authentication 
 
 ## 📸 Screenshots
 
-> (Add your screenshots here)
 
-### 🔐 Authentication
-![Login](screenshots/login.png)
-![Register](screenshots/register.png)
-
-### 📋 Task Dashboard (Light Mode)
-![Light Mode](screenshots/light.png)
-
-### 🌙 Task Dashboard (Dark Mode)
-![Dark Mode](screenshots/dark.png)
+  ### 🔐 Authentication
+  ![Login](screenshots/login.png)
+  ![Register](screenshots/register.png)
+  
+  ### 📋 Task Dashboard (Light Mode)
+  ![Light Mode](screenshots/light.png)
+  
+  ### 🌙 Task Dashboard (Dark Mode)
+  ![Dark Mode](screenshots/dark.png)
 
 ---
 
