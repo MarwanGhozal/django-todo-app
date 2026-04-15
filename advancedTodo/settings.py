@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import dj_database_url
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -83,15 +84,22 @@ WSGI_APPLICATION = "advancedTodo.wsgi.application"
 
 
 
+# DATABASES = {
+#     "default": {
+#         "ENGINE": "django.db.backends.postgresql",
+#         "NAME": config("PGDATABASE"),
+#         "USER": config("PGUSER"),
+#         "PASSWORD": config("PGPASSWORD"),
+#         "HOST": config("PGHOST"),
+#         "PORT": config("PGPORT", default="5432"),
+#     }
+# }
+
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": config("PGDATABASE"),
-        "USER": config("PGUSER"),
-        "PASSWORD": config("PGPASSWORD"),
-        "HOST": config("PGHOST"),
-        "PORT": config("PGPORT", default="5432"),
-    }
+    "default": dj_database_url.config(
+        default=config("DATABASE_URL", default=None)
+    )
 }
 
 # Password validation
