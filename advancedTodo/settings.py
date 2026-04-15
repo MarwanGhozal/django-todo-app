@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/6.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -22,10 +23,15 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = config('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
-ALLOWED_HOSTS = []
+# SECURITY WARNING: don't run with debug turned on in production!
+DEBUG = os.environ.get('DEBUG', 'False') == 'True'
+
+ALLOWED_HOSTS = [
+    "django-todo-app-production-8a48.up.railway.app",
+    "127.0.0.1",
+    "localhost"
+]
 
 
 # Application definition
@@ -75,18 +81,16 @@ WSGI_APPLICATION = "advancedTodo.wsgi.application"
 
 
 
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME'),
-        'USER': config('DB_USER'),
-        'PASSWORD': config('DB_PASSWORD'),
-        'HOST': config('DB_HOST'),
-        'PORT': config('DB_PORT'),
+        'NAME': config('DB_NAME', default=os.environ.get('PGDATABASE')),
+        'USER': config('DB_USER', default=os.environ.get('PGUSER')),
+        'PASSWORD': config('DB_PASSWORD', default=os.environ.get('PGPASSWORD')),
+        'HOST': config('DB_HOST', default=os.environ.get('PGHOST', 'localhost')),
+        'PORT': config('DB_PORT', default=os.environ.get('PGPORT', '5432')),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/6.0/ref/settings/#auth-password-validators
