@@ -128,12 +128,13 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/6.0/howto/static-files/
 CSRF_TRUSTED_ORIGINS = [
     "https://django-todo-app-production-8a48.up.railway.app/"
 ]
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/6.0/howto/static-files/
+
 LOGIN_URL = "/login"
 STATIC_URL = "static/"
 STATICFILES_DIRS = [BASE_DIR / "static"]
