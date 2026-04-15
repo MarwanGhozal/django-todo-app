@@ -42,7 +42,7 @@ A backend-driven Todo application built using Django with secure authentication 
 ## ⚙️ Run Locally
 
 ```bash
-git clone https://github.com/yourusername/django-todo-app.git
+git clone https://github.com/MarwanGhozal/django-todo-app.git
 cd django-todo-app
 
 pip install -r requirements.txt
